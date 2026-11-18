@@ -13,7 +13,7 @@ export class MindmapSettingTab extends PluginSettingTab {
     containerEl.createEl('h3', { text: 'Ask AI (OpenAI)' });
     new Setting(containerEl)
       .setName('OpenAI API key')
-      .setDesc("Stored in this vault's .obsidian/plugins/mindmap/data.json — keep it out of git.")
+      .setDesc("Stored in this vault's .obsidian/plugins/trip-mindmap/data.json — keep it out of git.")
       .addText(t => { t.inputEl.type = 'password'; t.setPlaceholder('sk-…').setValue(this.host.settings.apiKey).onChange(async v => { this.host.settings.apiKey = v.trim(); await this.host.saveSettings(); }); });
     new Setting(containerEl)
       .setName('Model')

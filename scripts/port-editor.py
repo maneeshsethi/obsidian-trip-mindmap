@@ -165,7 +165,7 @@ js = R(js, "let pan=null;", "let pan=null,lp=null,pinch=null;const ptrs=new Map(
 # --- Ask AI: OpenAI via opts.ai instead of claude.ai sample
 js = R(js, "(async()=>{try{if(window.claude&&window.claude.use)AG.sample=await window.claude.use('sample')}catch(e){}", "(async()=>{AG.sample=opts.ai||null;")
 js = R(js, "if(!AG.sample){agMsg('sys','Ask Claude only works when this page is opened on claude.ai.');return}",
-       "if(!AG.sample){agMsg('sys','Add an OpenAI API key in Settings → Mindmap to use Ask AI.');return}")
+       "if(!AG.sample){agMsg('sys','Add an OpenAI API key in Settings → Trip Mindmap to use Ask AI.');return}")
 js = R(js, "const res=await AG.sample.json([{role:'user',content:agRules()},...AG.turns.slice(-12)],{signal:AG.ctl.signal,cache:false,onText:()=>{}});",
        "const res=await AG.sample.ask([{role:'system',content:agRules()},...AG.turns.slice(-12)],{signal:AG.ctl.signal});")
 js = R(js, "catch(e){const c=e&&e.code;AG.turns.pop();agMsg('sys',AGERR[c]||'Something went wrong reaching Claude. Try again.');if(e&&e.text&&c!=='invalid_json'&&c!=='cancelled')agMsg('ai',e.text)}",

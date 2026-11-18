@@ -10,7 +10,7 @@ export type HttpFn = (req: HttpRequest) => Promise<{ status: number; json: any }
 
 export async function askOpenAI(settings: AiSettings, messages: ChatMessage[], opts: { request: HttpFn; signal?: AbortSignal }): Promise<{ reply: string; ops: AiOp[] }> {
   const key = (settings.apiKey || '').trim();
-  if (!key) throw new Error('No OpenAI API key — set it in Settings → Mindmap');
+  if (!key) throw new Error('No OpenAI API key — set it in Settings → Trip Mindmap');
   if (opts.signal?.aborted) throw new Error('Stopped');
   const base = (settings.baseUrl || DEFAULT_AI_SETTINGS.baseUrl).replace(/\/+$/, '');
   const req = opts.request({

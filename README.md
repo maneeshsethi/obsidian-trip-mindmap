@@ -5,14 +5,14 @@ Keyboard-driven mind maps for Obsidian, for any topic, plus **trip maps** with d
 - Each map is a standalone `.mindmap` file. Embed it in any note with `![[My map.mindmap]]` (or `![[My map.mindmap|500]]` for a 500px-tall embed).
 - **New mindmap** and **New trip mindmap** appear in the command palette and in a folder's right-click menu.
 - Colour any idea and its sub-ideas: press `C`, then `1`–`8` (`0` resets).
-- Optional **Ask AI** panel using your own OpenAI API key (Settings → Mindmap).
+- Optional **Ask AI** panel using your own OpenAI API key (Settings → Trip Mindmap).
 - Works on mobile for viewing and light edits.
 
 ## Install with BRAT
 
 1. Install **BRAT** from Community plugins.
 2. Run **BRAT: Add a beta plugin** and enter `maneeshsethi/obsidian-trip-mindmap`.
-3. Enable **Mindmap** in Community plugins.
+3. Enable **Trip Mindmap** in Community plugins.
 
 ## Keys
 
@@ -49,9 +49,9 @@ Press `?` in a map for the full list.
 npm install
 npm test
 npm run build                         # → main.js
-scripts/install.sh /path/to/vault     # copy into <vault>/.obsidian/plugins/mindmap/
+scripts/install.sh /path/to/vault     # copy into <vault>/.obsidian/plugins/trip-mindmap/
 ```
 
 The editor (`src/editor/editor.js`, `markup.ts`, `styles.css`) is generated from `reference/trip-mindmap.html` by `python3 scripts/port-editor.py`.
 
-Your OpenAI key is stored in `<vault>/.obsidian/plugins/mindmap/data.json`. Keep that file out of git and out of anything you share.
+Your OpenAI key is stored in `<vault>/.obsidian/plugins/trip-mindmap/data.json`. Keep that file out of git and out of anything you share.

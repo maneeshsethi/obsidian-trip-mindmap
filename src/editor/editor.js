@@ -487,7 +487,7 @@ function agChips(){if(agLog.children.length)return;const ideas=TRIP()?['Suggest 
 function agReset(){agDiscard();AG.turns=[];agLog.innerHTML='';AG.mapId=cur?cur.uid:null;if(!agEl.hidden)agChips()}
 function setAgent(open){agEl.hidden=!open;$('#agentBtn').classList.toggle('on',open);if(open&&RO)return;if(open){if(AG.mapId!==(cur&&cur.uid))agReset();agChips();agIn.focus()}else{mapPane.focus({preventScroll:true})}}
 const AGERR={not_granted:"Claude wasn't allowed for this page. Reload and allow it to use Ask Claude.",rate_limited:'Too many requests right now. Wait a moment, then send again.',invalid_json:"Claude's answer couldn't be read as map changes. Try asking again, a little more specifically.",prompt_too_large:'This map is too large to send in one go.',refused:'Claude declined that request.',cancelled:'Stopped.',session_expired:'Your claude.ai session expired. Reload the page.',sampling_disabled:'Asking Claude is turned off for this account.'};
-async function agSend(){const msg=agIn.value.trim();if(!msg||AG.busy)return;if(!AG.sample){agMsg('sys','Add an OpenAI API key in Settings → Mindmap to use Ask AI.');return}
+async function agSend(){const msg=agIn.value.trim();if(!msg||AG.busy)return;if(!AG.sample){agMsg('sys','Add an OpenAI API key in Settings → Trip Mindmap to use Ask AI.');return}
   if(AG.preview)agKeep();if(editing)commitEdit();agChipsClear();agMsg('me',msg);agIn.value='';AG.turns.push({role:'user',content:msg});
   AG.busy=true;AG.ctl=new AbortController();$('#agSend').disabled=true;$('#agStop').hidden=false;const t0=Date.now();const tick=setInterval(()=>{agStatus.textContent=`Thinking… ${Math.round((Date.now()-t0)/1000)}s`},500);agStatus.textContent='Thinking…';
   const mapAt=cur.uid;

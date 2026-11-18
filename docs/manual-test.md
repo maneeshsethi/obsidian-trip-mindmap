@@ -1,6 +1,6 @@
-# Manual test — Mindmap plugin
+# Manual test — Trip Mindmap plugin
 
-Reload Obsidian first (or Settings → Community plugins → toggle **Mindmap** off and on).
+Reload Obsidian first (or Settings → Community plugins → toggle **Trip Mindmap** off and on).
 
 ## General map
 - [ ] Command palette → **New mindmap** opens `Untitled mindmap.mindmap` in a new tab.
@@ -25,8 +25,8 @@ Reload Obsidian first (or Settings → Community plugins → toggle **Mindmap** 
 - [ ] Edit the map in its tab → the embed updates.
 
 ## Ask AI
-- [ ] Without a key, `/` then send → message points to Settings → Mindmap.
-- [ ] Add key (Settings → Mindmap) → ask "add 3 ideas" → changes appear highlighted; **Keep** saves; **Revert** removes.
+- [ ] Without a key, `/` then send → message points to Settings → Trip Mindmap.
+- [ ] Add key (Settings → Trip Mindmap) → ask "add 3 ideas" → changes appear highlighted; **Keep** saves; **Revert** removes.
 - [ ] If the model name errors, change **Model** in settings to one your key has.
 
 ## External changes
