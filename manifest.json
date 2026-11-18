@@ -1,0 +1,9 @@
+{
+  "id": "mindmap",
+  "name": "Mindmap",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Keyboard-driven mind maps for any topic, plus trip maps with dates, calendar and route map.",
+  "author": "Maneesh Sethi",
+  "isDesktopOnly": false
+}
