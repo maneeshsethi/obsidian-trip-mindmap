@@ -1,4 +1,4 @@
-import { Notice, Plugin, TFolder, requestUrl, type TAbstractFile } from 'obsidian';
+import { Menu, Notice, Plugin, TFolder, requestUrl, type TAbstractFile } from 'obsidian';
 import { MindmapView, VIEW_TYPE } from './view';
 import { DEFAULT_SETTINGS, MindmapSettingTab, type MindmapSettings } from './settings';
 import { newMap, convertKind, serializeMap, type Kind } from './model/schema';
@@ -18,6 +18,12 @@ export default class MindmapPlugin extends Plugin {
     this.addSettingTab(new MindmapSettingTab(this.app, this));
     registerEmbeds(this);
 
+    this.addRibbonIcon('git-fork', 'New mindmap', evt => {
+      const menu = new Menu();
+      menu.addItem(i => i.setTitle('New mindmap').setIcon('git-fork').onClick(() => this.createMap('general')));
+      menu.addItem(i => i.setTitle('New trip mindmap').setIcon('plane').onClick(() => this.createMap('trip')));
+      menu.showAtMouseEvent(evt);
+    });
     this.addCommand({ id: 'new-mindmap', name: 'New mindmap', callback: () => this.createMap('general') });
     this.addCommand({ id: 'new-trip-mindmap', name: 'New trip mindmap', callback: () => this.createMap('trip') });
     this.addCommand({
